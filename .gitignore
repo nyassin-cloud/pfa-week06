@@ -1,0 +1,4 @@
+results/
+*.obj
+*.mtl
+*.spp
