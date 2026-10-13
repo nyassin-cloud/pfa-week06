@@ -7,12 +7,12 @@ $ErrorActionPreference = 'Stop'
 function Send-Painter([string]$Code) {
     $body = @{python = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($Code))} | ConvertTo-Json -Compress
     try {
-        $response = Invoke-WebRequest -Uri 'http://127.0.0.1:60041/run.json' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 30
+        $response = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:60043/run.json' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 30
         try { $decoded = $response.Content | ConvertFrom-Json } catch { $decoded = $null }
         if ($decoded -and $decoded.error) { throw $decoded.error }
         $response.Content
     } catch {
-        throw "Painter bridge failed: $($_.Exception.Message). Launch Painter with --enable-remote-scripting."
+        throw "Painter bridge failed: $($_.Exception.Message). Enable octo_bridge in Painter's Python menu."
     }
 }
 if ($Action -eq 'status') {
