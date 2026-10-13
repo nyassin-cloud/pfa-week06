@@ -102,23 +102,3 @@ returns JSON results or tracebacks to our PowerShell client. This is our
 own app-side bridge, not just an installed third-party integration.
 It accepts Python code from local clients; disable the plugin when done.
 
-## Recording (60 seconds maximum)
-
-- Before recording: keep the plugin installed, save your project, close
-  Painter, and prepare the terminal and agent chat so switching is quick.
-- 0–10 seconds: start recording and open Painter. The custom plugin needs
-  no launch flag. If it is not enabled automatically, enable **Python > octo_bridge**.
-- 10–20 seconds: ask the agent, “Load my Octo OBJ, automatically UV unwrap it, and save a new Painter project.”
-- 20–45 seconds: show the agent running the unwrap bridge and the operation
-  completing in Painter. If launch/loading takes too long to fit under one
-  minute, start the final take with Painter already open and the terminal visible.
-- 45–60 seconds: show the UV islands in the 2D view and the saved result.
-
-The recording must capture a real agent request and bridge execution.
-Add the video or its link here after recording. Submit the GitHub repository
-URL for the assignment.
-
-## References
-
-- [Adobe remote scripting](https://experienceleague.adobe.com/en/docs/substance-3d-dev/painter-python/tutorials/remote-control)
-- [Adobe project and auto-unwrap API](https://experienceleague.adobe.com/en/docs/substance-3d-dev/painter-python/api/substancepainter-package/project)
