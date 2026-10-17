@@ -2,11 +2,8 @@
 
 ## App and bridge
 
-Adobe Substance 3D Painter 12.1.4, using a **live port bridge**.
-Our PowerShell client sends base64-encoded Python over HTTP to Painter's
-local `/run.json` endpoint at port 60043, served by our own `octo_bridge.py`
-plugin. We built both the server, client, and unwrap
-workflow ourselves; no third-party MCP server is installed.
+This is a tool that uses Adobe Substance 3D Painter 12.1.4 to unwrap
+the uvs of any object the user wants
 
 ## How to run
 
